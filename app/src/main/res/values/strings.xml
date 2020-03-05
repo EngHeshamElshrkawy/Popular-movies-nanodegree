@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movie It</string>
+    <string name="title_hint">MOVIE TITLE</string>
+    <string name="plot_hint">movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description movie description </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="api_key">85d8b7fc49300344300331020d65d764</string>
+</resources>

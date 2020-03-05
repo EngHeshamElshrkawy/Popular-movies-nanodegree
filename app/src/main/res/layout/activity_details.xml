@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.DetailsActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Activities.DetailsActivity">
+
+        <ScrollView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true">
+
+                    <View
+                        android:id="@+id/posterOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="405dp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/posterOverlay"
+                        android:layout_marginEnd="18dp"
+                        android:background="@drawable/play_trailer"
+                        android:gravity="center"
+                        android:onClick="playTrailers" />
+
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ic_iconmonstr_arrow_64"
+                        android:onClick="backButton" />
+
+                    <Button
+                        android:id="@+id/favourite_button"
+                        android:onClick="Favorited"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/not_favourite" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/spacer">
+
+
+                        <TextView
+                            android:id="@+id/details_plot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@color/backgroundwhite"
+                            android:hint="PLOT"
+                            android:padding="40dp"
+                            android:fontFamily="@font/change_regular"/>
+
+                        <TextView
+                            android:fontFamily="@font/change_regular"
+                            android:id="@+id/details_released"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/backgroundwhite"
+                            android:hint="RELEASED" />
+
+                        <LinearLayout
+                            android:id="@+id/time"
+                            android:layout_width="102dp"
+                            android:layout_height="18dp"
+                            android:layout_alignTop="@+id/details_released"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/backgroundwhite">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_gravity="bottom"
+                                android:src="@drawable/ic_iconmonstr_time_3" />
+
+                            <TextView
+                                android:id="@+id/run_time"
+                                android:layout_width="72dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentTop="true"
+                                android:fontFamily="@font/change_regular"
+                                android:hint="1:26:03"
+                                android:paddingLeft="3dp"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/details_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="430dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="430dp"
+                        android:background="@drawable/grad" />
+
+                    <TextView
+                        android:id="@+id/details_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/ratingBar"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="50dp"
+                        android:textSize="25sp"
+                        android:fontFamily="@font/change_bold"
+                        android:textColor="@color/cast"/>
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/posterOverlay"
+                        android:layout_centerHorizontal="true"
+                        android:isIndicator="true"
+                        android:stepSize="0.01"
+                        app:mrb_progressTint="@color/roundButton"
+                        app:mrb_secondaryProgressTint="@color/cast"
+                        app:mrb_progressBackgroundTint="@color/cast"
+                        style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"/>
+
+
+                    <View
+                        android:id="@+id/spacer"
+                        android:layout_width="match_parent"
+                        android:layout_height="9dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/details_poster"
+                        android:background="@color/cast"
+                        app:layout_constraintVertical_bias="0.68"
+                        tools:layout_editor_absoluteX="0dp" />
+
+                </RelativeLayout>
+
+
+                <GridView
+                    android:id="@+id/cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:background="@color/cast"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp"
+                    android:paddingLeft="25dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
+
+
+                </GridView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ListView
+            android:id="@+id/review_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundwhite"
+            tools:ignore="NestedScrolling" />
+        <TextView
+            android:fontFamily="@font/change_extrabold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="MORE LIKE THIS"
+            android:background="@color/secondaryDarkColor" />
+        <GridView
+            android:padding="5dp"
+            android:id="@+id/recommendations_gv"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:horizontalSpacing="10dp"
+            android:background="@color/secondaryDarkColor"
+            android:numColumns="3"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:gravity="center">
+        </GridView>
+    </LinearLayout>
+
+</ScrollView>
